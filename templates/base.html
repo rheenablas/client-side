@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>S M A C K</title>
+    <link rel='icon' href="{{ url_for('static', filename='games.png' ) }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='game.css') }}" />
+</head>
+
+<body>
+    <header>
+        <h1>S M A C K</h1>
+        <nav>
+            {% if g.user %}
+            <ul>
+                <li>User: {{ g.user }}! </li>
+                <li><a href="{{ url_for('index') }}">About</a></li>
+                <li><a href="{{ url_for('game') }}">Play</a></li>
+                <li id="hov"><a href="{{ url_for('score') }}">Scoreboards</a></li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            </ul>
+            {% else %}
+            <ul>
+                <li><a href="{{ url_for('index') }}">About</a></li>
+                <li><a href="{{ url_for('game') }}">Play</a></li>
+                <li id="hov"><a href="{{ url_for('score') }}">Scoreboards</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+            </ul>
+            {% endif %}
+        </nav>
+    </header>
+
+    {% block main_content %}
+
+    {% endblock %}
+
+    <footer>
+        <p>
+            A Web Dev 2 Project.
+        </p>
+        <p>
+            &copy; Rheena Blas &hearts;  <strong class="col">To God be the glory!</strong>
+        </p>
+
+    </footer>
+</body>
+
+
+</html>

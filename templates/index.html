@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block main_content %}
+
+    <main>
+        <h2>Instructions</h2>
+        <p>
+            Avoid the ghosts and save the townspeople!
+            Use <b>arrow keys/WASD</b> to <b><i>navigate</i></b>. 
+            <img src="{{ url_for('static', filename='sanc.png')}}">
+        </p>
+        <p>
+            Once the health is running low, <i>manna</i> will fall from
+            heaven, <b>collect</b> it before it falls off the canvas! 
+            <b><i>Regenerate health</i></b>  in the sanctuary on the middle right side of the canvas
+            (the little platform). 
+        <p>
+            <b>Spacebar</b> to turn the ghosts neutral and <b><i>defeat the enemies</i></b>! Firing at the enemies in the
+            sanctuary is disabled. 
+        </p>
+        <h2>Cheats</h2>
+        <p>
+            <ul>
+                <li>Press <b>Z</b> to <i><b>increase</b></i> player speed. Press <b>X</b> to <i><b>decrease</b></i> player speed.</li>
+                <li>Press <b>C</b> to <i><b>spawn</b></i> enemies. Press <b>V</b> to <i><b>remove</b></i> enemies.</li>
+            </ul>
+        </p>
+        <h2 id="mid"><a href="{{ url_for('game') }}">Play</a></h2>
+        <h2>Game Lore</h2>
+        <p>
+            As the world comes to its end, people are in a state of panic, not knowing what to do. 
+            Your job is to save the people by sharing the good news that all may have everlasting peace, 
+            eternal life. “He said to them, ‘Go into all the world and preach the gospel to all creation.” <i>Mark 16:15</i>
+        </p>
+        <p>
+            The enemies are going to come at you no matter what you do, so shoot them with 
+            love to neutralize them. But know that even as you sow your love to them, their 
+            purpose is to bring you down. “But I tell you, love your enemies and pray for those who 
+            persecute you, that you may be children of your Father in heaven.” <i>Matthew 5:44</i>
+        </p>    
+        <p>
+            As you suffer from the persecutions of those whose eyes are closed off to the truth, 
+            manna (bread) from heaven will come down to strengthen you. Take it and be satisfied. 
+            Spend some time in the sanctuary to replenish your strength and be free from the attacks of the enemies. 
+        </p>
+    </main>
+
+{% endblock %}

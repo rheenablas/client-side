@@ -1,0 +1,19 @@
+{% if wins == [] %}
+<p id="center">Play the game!</p>
+
+{% else %}
+<table>
+    <caption>Most Enemies Defeated</caption>
+    <tr>
+        <th scope="col">User ID</th>
+        <th scope="col">Enemies Defeated</th>
+    </tr>
+    {% for people in wins %}
+    <tr>
+        <td>{{people['user_id']}}</td>
+        <td>{{people['score']}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+

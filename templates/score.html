@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block main_content %}
+<script src="{{ url_for('static', filename='scores.js')}}" type="module"></script>
+<main>
+    <h2>Scoreboards</h2>
+    <nav>
+        <button id="recent">Recent</button>
+        <button id="scoreboard">Top 10</button>
+        <button id="kills">Most Kills</button>
+        <button id="saved">Most Saved</button>
+    </nav>
+    
+    <div id="scores">
+
+    </div>
+   
+</main>
+{% endblock %}

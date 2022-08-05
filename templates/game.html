@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block main_content %}
+<script src="{{ url_for('static', filename='game.js')}}" type="module"></script>
+
+<div>
+    <section id="right">
+        {% if g.user is none %}
+        <p><b>User:</b><i>{{tempUser}}</i> </p>
+        {% else %}
+        <p><b>User:</b><i>{{g.user}}</i> </p>
+        {% endif %}
+        <ul>
+            <li>
+                <ul>
+                    <li><b>Controls:</b></li>
+                    <li><b>Arrow keys/WASD</b> to <i><b>navigate</b></i>.</li>
+                    <li><b>Spacebar</b> to <i><b>shoot</b></i> hearts.</li>
+                    <li><b>Q</b> to <b>quit</b> game.</li>
+                    <li><b>Z</b> to <i><b>increase</b></i> player speed.</li>
+                    <li><b>X</b> to <i><b>decrease</b></i> player speed.</li>
+                    <li><b>C</b> to <i><b>spawn</b></i> enemies.</li>
+                    <li><b>V</b> to <i><b>remove</b></i> enemies.</li>
+                    <li><b>M</b> to <i><b>mute/unmute</b></i> background music.</li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                    <li><b>Goals:</b></li>
+                    <li><b>Save</b> townspeople by <b>interacting</b> with them until they reach the
+                        sanctuary.</li>
+                    <li>Use love to neutralise and defeat the enemies</li>
+                    <li>Catch manna from heaven to regain health / 
+                        stay in the sanctuary to gain health back.</li>
+                </ul>
+
+            </li>
+        </ul>
+    </section>
+    <section id="left">
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('game')}}">Play Again</a></li>
+                <li><a href="{{ url_for('score') }}">View Scoreboards</a></li>
+            </ul>
+        </nav>
+        
+        <canvas width="480" height="480"></canvas>
+    </section>
+</div>
+
+{% endblock %}
